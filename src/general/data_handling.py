@@ -15,12 +15,15 @@ from quantify_core.data.handling import (
     load_dataset_from_path,
 )
 
+#####################################################################
+############### ADJUST THIS TO YOUR OWN DROPBOX PATH! ###############
+PATH_TO_OVERLEAF = "C:/Users/timod/Dropbox/Apps/Overleaf/Msc Thesis/"
+#####################################################################
 REPO_PATH = path.abspath("") #.split("nuclear_spin_snv")[0] + "nuclear_spin_snv"
 DATA_PATH = path.join(REPO_PATH, "data")
 FIGURE_PATH = path.join(REPO_PATH, "figures")
 SUBFIGURE_PATH = path.join(REPO_PATH, "subfigures")
 FIGURE_PATH_BASE = "figures/results/"
-PATH_TO_OVERLEAF = "C:/Users/timod/Dropbox/Apps/Overleaf/Msc Thesis/"
 
 HZ_TO_KHZ = 1e-3
 MHZ_TO_KHZ = 1e3
@@ -67,14 +70,6 @@ def load_quantities_of_interest_from_data(
         quantities_of_interest = json.load(file)
     return quantities_of_interest
 
-
-# def save_figure(
-#     fig, figure_number: int, subfigure_name: str
-# ) -> None:
-#     fig.savefig(
-#         path.join(SUBFIGURE_PATH, f"figure{figure_number}", f"{subfigure_name}.svg"),
-#         transparent=True,
-#     )
 def save_figure(
     fig, figure_number: int, subfigure_name: str, **kwargs
 ) -> None:
